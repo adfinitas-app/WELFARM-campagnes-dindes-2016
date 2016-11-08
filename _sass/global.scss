@@ -1,0 +1,67 @@
+$black: #000000;
+$white: #ffffff;
+$grey: #404040;
+$orange: #f19402;
+$green: #97bf0d;
+$green-clear: #7db838;
+$brown: #3c3734;
+$frank: 'Young-Frankenstein-Rotalic';
+$helvetica: "nimbus-sans", sans-serif;
+$titillium: 'Titillium Web', sans-serif;
+
+@font-face {
+  font-family: 'Young-Frankenstein-Rotalic';
+  src:url('/font/Young-Frankenstein-Rotalic.ttf.woff') format('woff'),
+  url('/font/Young-Frankenstein-Rotalic.ttf.svg#Young-Frankenstein-Rotalic') format('svg'),
+  url('/font/Young-Frankenstein-Rotalic.ttf.eot'),
+  url('/font/Young-Frankenstein-Rotalic.ttf.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+// generic transform
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+.bold {
+  font-weight: bold;
+}
+.green-color {
+  color: $green;
+}
+.orange-color {
+  color: $orange;
+}
+.show-for-medium-up {
+  display: none;
+}
+@media only screen and (min-width: 40em) {
+  .show-for-medium-up {
+    display: block !important;
+  }
+}
+.show-for-small-only {
+  display: none;
+}
+@media only screen and (max-width: 39.9375em) {
+  .show-for-small-only {
+    display: block !important;
+  }
+}
+.italic {
+  font-style: italic;
+}
+.nobold {
+  font-weight: normal;
+}
