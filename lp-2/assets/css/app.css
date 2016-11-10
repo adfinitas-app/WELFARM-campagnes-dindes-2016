@@ -1,0 +1,154 @@
+body {
+	background: #000000;
+}
+
+#header {
+	height: 100vh;
+}
+
+#row-header {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#video-header {
+	width: 100%;
+	height: 100%;
+}
+
+#slide-2 {
+	padding-top: 100px;
+	min-height: 100vh;
+}
+
+.chiffres-don {
+	display: inline-block;
+	font-family: "Helvetica";
+	font-size: 42px;
+	margin: 0;
+}
+
+.euros {
+	margin-top: 12px;
+	vertical-align: top;
+	display: inline-block;
+	font-family: "Helvetica";
+	font-size: 26px;
+}
+
+.text-deduction {
+	font-family: "Helvetica";
+	font-size: 11px;
+}
+
+.text-don {
+	font-family: "Helvetica";
+	font-size: 14px;
+	margin-bottom: 60px;
+}
+
+.title {
+	line-height: 1.2;
+	text-transform: uppercase;
+	font-size: 32px;
+	color: white;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+.title.orange {
+	font-weight: bold;
+	color: #f29400;
+}
+
+.row-box-don {
+	margin-top: 10px;
+}
+
+.box-don {
+	background: #000000;
+	height: 300px;
+	display: inline-block;
+	margin-right: 10px;
+	margin-top: 15px;
+	text-align: center;
+	border: 1px solid white;
+	color: white;
+	padding: 30px;
+}
+.box-don:hover  {
+	background: #97bf0d;
+}
+.box-don p {
+	line-height: 1.2;
+}
+
+.box-don button {
+	margin-top: 20px;
+}
+
+.btn-custom {
+	font-weight: bold;
+	width: 220px;
+	height: 50px;
+	background: #f29400;
+	border-radius: 5px;
+	font-size: 18px;
+}
+
+.button.btn-custom:hover,
+.button.btn-custom:focus {
+	background: #000000;
+}
+
+.text-footer {
+	color: white;
+	font-family: 'Helvetica';
+}
+
+.footer-bottom  {
+	margin-top: 60px;
+}
+.footer-bottom p {
+	margin-top: 15px;
+}
+.footer-top > div {
+	text-align: right;
+}
+
+#footer .row:nth-child(2) {
+	margin-top: 20px;
+}
+
+#container-social {
+	display: inline;
+}
+#container-social p {
+	font-family: 'Helvetica';
+	display: inline-block;
+	color: white;
+}
+#container-social p:nth-child(1) {
+	font-size: 20px;
+}
+#container-social p:nth-child(2) {
+	font-weight: bold;
+}
+
+#container-social img {
+	display: inline-block;
+	margin-right: 5px;
+}
+#container-social .text-site {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+@media screen and (max-width: 640px) {
+	.footer-top > div {
+		margin-top: 30px;
+		text-align: center;
+	}
+}
+
+
+
