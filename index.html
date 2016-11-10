@@ -24,16 +24,16 @@ og-image: ""
   <div class="row header-2">
     <div class="large-7 columns">
       <div class="button-group">
-       <a href="#je-signe" class="button">
+       <a href="#subissement" class="button">
         pourquoi ?
       </a>
-      <a href="#jinterpelle" class="button">
+      <a href="#acteur" class="button">
        Les Alternatives
      </a>
-     <a href="#jinterpelle" class="button">
+     <a href="#je-signe" class="button">
        Je Signe
      </a>
-     <a href="#jinterpelle" class="button">
+     <a href="#soutiens" class="button">
        Je soutiens la campagne
      </a>
    </div>
@@ -43,10 +43,10 @@ og-image: ""
   <a class="social-network" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}">
    <img src="/img/fb.png" alt="Facebook">
  </a>
- <a class="social-network" href="https://twitter.com/home?status=%23COUIC2018%20/%20Non%20%C3%A0%20la%20%23castration%20%C3%A0%20vif%20des%20%23porcelets%20!%20Vid%C3%A9o%20et%20%23p%C3%A9tition%20%C3%A0%20partager%20sur%20www.couic2018.fr">
+ <a class="social-network" href="">
    <img src="/img/twitter.png" alt="Twitter">
  </a>
- <p class="hashtag">#COUIC2018</p>
+ <p class="hashtag">#VIEDEDINDE</p>
 </div>
 </div>
 </section>
@@ -83,7 +83,12 @@ og-image: ""
   </div>
 </section>
 <section id="acteur">
-  <h2>Devenez acteur du changement, modérez votre consommation de produits carnés et privilégiez l’élevage de dindes en plein air</h2>
+  <div class="arrow">
+    <img src="/img/arrow-grey.png">
+  </div>
+  <div class="row">
+    <h2 class="small-offset-1 small-10 medium-7 large-6 columns acteur-title">Devenez acteur du changement, modérez votre consommation de produits carnés et privilégiez l’élevage de dindes en plein air</h2>
+  </div>
 </section>
 <section class="green">
   <div class="row">
@@ -98,75 +103,86 @@ og-image: ""
     </div>
   </div>
 </section>
-<div class="arrow">
-  <img src="/img/arrow-grey.png">
-</div>
 <section class="petition" id="je-signe">
+  <div class="arrow">
+    <img src="/img/arrow-green.png">
+  </div>
   <div class="part-1">
     <div class="row">
-      <div class="large-2 columns">
-        <div class="number">1</div>
-      </div>
-      <div class="large-8 columns end">
-        <h2>Je signe la pétition</h2>
-        <h4>pour demander l’arrêt de la castration à vif des porcelets</h4>
-        <h3>Déjà <span id="nb-signatures">0</span> signatures</h3>
+      <div class="large-offset-2 large-8 columns end">
+        <h2 class="petition-title">Je signe la pétition</h2>
+        <h4>pour l’instauration d’une réglementation protégeant les dindes</h4>
+        <h3>Déjà <span id="nb-signatures">13027</span> signatures</h3>
       </div>
     </div>
     <div class="row texte">
       <div class="large-8 columns large-centered">
         <p>
-          Le 25 mai 2016, WELFARM s’est rendue au Ministère de l’Agriculture pour remettre 110 294 signatures de citoyens demandant l’interdiction de la castration à vif des porcelets. Lors de notre rencontre, le cabinet du Ministre s’est montré intéressé pour avancer sur le sujet. Cependant, en l’absence de mesures concrètes, WELFARM reste mobilisée. Vous pouvez donc continuer à signer notre pétition pour exprimer votre souhait de voir cette pratique interdite en France comme c’est déjà le cas en Suisse, en Norvège ou encore en Suède.
-        </p>
-      </div>
+         Actuellement il n’existe aucune réglementation spécifique encadrant l’élevage de dindes, ce qui donne lieu à des élevages à densité particulièrement élevée. WELFARM a lancé cette pétition à l’attention du ministre de l’Agriculture afin d’obtenir rapidement un texte réglementaire contraignant pour améliorer les conditions de vie des dindes (aménagement des bâtiments, diminution des densités, utilisation de souches légères...).
+       </p>
+     </div>
+   </div>
+ </div>
+ <div class="part-2">
+  <form class="petitionForm" novalidate>
+    <div class="row">
+     <div class="large-10 columns large-centered">
+       <div class="medium-3 columns">
+         <input type="text" placeholder="Nom" name="lastname" required />
+         <p class="show-error">Le nom n'est pas valide</p>
+       </div>
+       <div class="medium-3 columns">
+         <input type="text" placeholder="Prénom" name="firstname" required />
+         <p class="show-error">Le prénom n'est pas valide</p>
+       </div>
+       <div class="medium-3 columns">
+         <input type="email" placeholder="Email" name="email" required />
+         <p class="show-error">L'email n'est pas valide</p>
+       </div>
+       <div class="medium-3 columns">
+         <input id="id_phone" type="text" placeholder="Téléphone" name="phone" />
+         <p class="show-error">Le numéro de téléphone n'est pas valide</p>
+       </div>
+     </div>
+   </div>
+   <div class="row">
+     <div class="large-12 columns">
+       <input name="optin" type="checkbox" id="1-checkbox">
+       <label for="1-checkbox">
+         <span></span>Je souhaite recevoir la newsletter de WELFARM
+       </label>
+     </div>
+   </div>
+   <div class="row large-collapse">
+     <div class="large-offset-4 large-4 columns">
+       <input type="submit" value="Je signe la pétition">
+     </div>
+   </div>
+ </form>
+</div>
+</section>
+<section id="soutiens">
+ <div class="arrow">
+   <img src="/img/arrow-black.png">
+ </div>
+ <div class="part-1">
+   <h2>Je soutiens la campagne <img src="/img/viededinde-panel.png"></h2>
+   <div class="row">
+    <div class="small-12 medium-4 columns media">
+      <img src="/img/icon-heart.png">
+      <div class="flex"><h3 class="flex-child">Je fais un don</h3></div>
+    </div>
+    <hr class="white_seperator">
+    <div class="small-12 medium-4 columns media">
+      <img src="/img/icon-smedia.png">
+      <div class="flex"hidden=""><h3 class="flex-child">Je partage la campagne sur les réseaux sociaux</h3></div>
+    </div>
+    <hr class="white_seperator">
+    <div class="small-12 medium-4 columns media">
+      <img src="/img/icon-map.png">
+      <div class="flex"><h3 class="flex-child">Je demande le kit militant</h3></div>
     </div>
   </div>
-  <div class="part-2">
-    <form class="petitionForm" novalidate>
-      <div class="row">
-       <div class="large-10 columns large-centered">
-         <div class="medium-3 columns">
-           <input type="text" placeholder="Nom" name="lastname" required />
-           <p class="show-error">Le nom n'est pas valide</p>
-         </div>
-         <div class="medium-3 columns">
-           <input type="text" placeholder="Prénom" name="firstname" required />
-           <p class="show-error">Le prénom n'est pas valide</p>
-         </div>
-         <div class="medium-3 columns">
-           <input type="email" placeholder="Email" name="email" required />
-           <p class="show-error">L'email n'est pas valide</p>
-         </div>
-         <div class="medium-3 columns">
-           <input id="id_phone" type="text" placeholder="Téléphone" name="phone" />
-           <p class="show-error">Le numéro de téléphone n'est pas valide</p>
-         </div>
-       </div>
-     </div>
-     <div class="row">
-       <div class="large-12 columns">
-         <input name="optin" type="checkbox" id="1-checkbox">
-         <label for="1-checkbox">
-           <span></span>Je souhaite recevoir la newsletter de WELFARM
-         </label>
-       </div>
-     </div>
-     <div class="row large-collapse">
-       <div class="large-offset-4 large-4 columns">
-         <input type="submit" value="Je signe la pétition">
-       </div>
-       <div class="large-4 columns share">
-         <p>Je partage :</p>
-         <a class="social-network" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}">
-           <img src="/img/fb.png" alt="Facebook">
-         </a>
-         <a class="social-network" href="https://twitter.com/home?status=%23COUIC2018%20/%20Non%20%C3%A0%20la%20%23castration%20%C3%A0%20vif%20des%20%23porcelets%20!%20Vid%C3%A9o%20et%20%23p%C3%A9tition%20%C3%A0%20partager%20sur%20www.couic2018.fr">
-           <img src="/img/twitter.png" alt="Twitter">
-         </a>
-         <p class="hashtag">#COUIC2018</p>
-       </div>
-     </div>
-   </form>
- </div>
+</div>
 </section>
 {% include footer.html %}

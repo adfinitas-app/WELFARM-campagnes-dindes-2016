@@ -97,6 +97,29 @@ function fillFieldsFromUrl() {
   }
 }
 
+function  height_adjust()
+{
+  $(".media > div").css({"height":"auto"});
+  var     max = $(".media > div").first().height();
+
+  if ($(window).width() > 640)
+  {
+    $(".media > div").each(function()
+    {
+      if ($(this).height() > max)
+        max = $(this).height();
+    });
+    console.log("hello max " + max + ";" + $(window).width());
+    max += 10;
+    max = max + "px";
+    $(".media > div").css({"height" : max});
+  }
+}
+
+$(window).resize(function() {
+  height_adjust();
+});
+
 $(window).load(function() {
   $('.block-list').equalize({
     children: '.block',
@@ -107,9 +130,8 @@ $(window).load(function() {
 
 $(document).ready(function()
 {
-
  fillFieldsFromUrl();
-
+ height_adjust();
  $("#id_phone").intlTelInput({
   utilsScript: "/js/tel-input/lib/libphonenumber/build/utils.js",
   initialCountry: "fr"
