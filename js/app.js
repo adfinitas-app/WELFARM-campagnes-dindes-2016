@@ -99,12 +99,12 @@ function fillFieldsFromUrl() {
 
 function  height_adjust()
 {
-  $(".media > div").css({"height":"auto"});
-  var     max = $(".media > div").first().height();
+  $(".media > div:last-child").css({"height":"auto"});
+  var     max = $(".media > div:last-child").first().height();
 
   if ($(window).width() > 640)
   {
-    $(".media > div").each(function()
+    $(".media > div:last-child").each(function()
     {
       if ($(this).height() > max)
         max = $(this).height();
@@ -112,7 +112,7 @@ function  height_adjust()
     console.log("hello max " + max + ";" + $(window).width());
     max += 10;
     max = max + "px";
-    $(".media > div").css({"height" : max});
+    $(".media > div:last-child").css({"height" : max});
   }
 }
 
