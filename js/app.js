@@ -109,7 +109,6 @@ function  height_adjust()
       if ($(this).height() > max)
         max = $(this).height();
     });
-    console.log("hello max " + max + ";" + $(window).width());
     max += 10;
     max = max + "px";
     $(".media > div:last-child").css({"height" : max});
