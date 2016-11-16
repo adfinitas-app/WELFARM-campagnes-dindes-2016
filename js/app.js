@@ -53,7 +53,6 @@ function makeCorsRequest(data) {
   xhr.onload = function() {
     //var text = xhr.responseText;
     //alert('Response from CORS request to ' + url + ': ' + text);
-    document.location.href = "#";
   };
   // Error Handler
   xhr.onerror = function() {
