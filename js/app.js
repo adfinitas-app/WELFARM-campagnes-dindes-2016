@@ -131,6 +131,12 @@ $(window).load(function() {
 $(document).ready(function()
 {
  fillFieldsFromUrl();
+  $(".petitionForm").on("submit", function(e) {
+    e.preventDefault();
+    if (isValid() == true) {
+      submitForm();
+    }
+  });
  height_adjust();
  $("#id_phone").intlTelInput({
   utilsScript: "/js/tel-input/lib/libphonenumber/build/utils.js",
