@@ -1,5 +1,5 @@
 /* Smooth scroll */
-merciPath = "/merci.html"
+merciPath = "/lp-2/index.html"
 
 $(function() {
   $('a[href*="#"]:not([href="#"])').click(function() {
