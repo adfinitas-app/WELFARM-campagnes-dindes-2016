@@ -94,7 +94,7 @@ function submitForm() {
   }
   today = new Date();
   var data = {
-    "schema": "welfarm",
+    "schema": "viededinde",
     "db": {
       "firstname": pureField($("input[name='firstname']").val()),
       "lastname": pureField($("input[name='lastname']").val()),
