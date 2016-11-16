@@ -53,7 +53,7 @@ function makeCorsRequest(data) {
   xhr.onload = function() {
     //var text = xhr.responseText;
     //alert('Response from CORS request to ' + url + ': ' + text);
-    document.location.href = "#soutiens";
+    scrollTo("#soutiens");
   };
   // Error Handler
   xhr.onerror = function() {
@@ -72,7 +72,6 @@ function 	scrollTo(id)
 		return false;
 	}
 }
-
 
 /*
  * Fin de la lib
