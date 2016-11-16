@@ -62,6 +62,18 @@ function makeCorsRequest(data) {
   xhr.send(body);
 }
 
+function 	scrollTo(id)
+{
+	if ($(id).length != 0)
+	{
+		$('html, body').stop().animate({
+			scrollTop: $(id).offset().top + 1
+		}, 500, 'swing');
+		return false;
+	}
+}
+
+
 /*
  * Fin de la lib
 */
