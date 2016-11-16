@@ -68,7 +68,7 @@ function 	scrollTo(id)
 	{
 		$('html, body').stop().animate({
 			scrollTop: $(id).offset().top + 1
-		}, 500, 'swing');
+		}, 900, 'swing');
 		return false;
 	}
 }
