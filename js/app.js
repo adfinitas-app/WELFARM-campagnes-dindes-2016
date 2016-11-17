@@ -75,9 +75,9 @@ function 	scrollTo(id)
 
 /*
  * Fin de la lib
-*/
+ */
 
-function pureField(string) {
+ function pureField(string) {
   return (string.replace(/'/g, "%27").replace(/"/g, "&quot;"));
 }
 
@@ -86,59 +86,59 @@ function submitForm() {
   /* Si il y a un champ OPTIN sur le formulaire, et qu'il n'est pas coché,
      l'utilisateur ne doit surement pas remonter sur threads (voir avec le chef de projet).
      Pour effectuer ça, laisser le champ threads à undefined
-   */
-  if ($("input[name='optin']:checked").length == 1) {
-    optin = true;
-  } else {
-    optin = false;
-  }
-  today = new Date();
-  var data = {
-    "schema": "viededinde",
-    "db": {
-      "firstname": pureField($("input[name='firstname']").val()),
-      "lastname": pureField($("input[name='lastname']").val()),
-      "email": pureField($("input[name='email']").val()),
-      "phone": pureField($("input[name='phone']").val()),
-      "optin": optin,
-      "event": "petitionporcinet",
-      "signin_date": today.toString()
+     */
+     if ($("input[name='optin']:checked").length == 1) {
+      optin = true;
+    } else {
+      optin = false;
     }
+    today = new Date();
+    var data = {
+      "schema": "viededinde",
+      "db": {
+        "firstname": pureField($("input[name='firstname']").val()),
+        "lastname": pureField($("input[name='lastname']").val()),
+        "email": pureField($("input[name='email']").val()),
+        "phone": pureField($("input[name='phone']").val()),
+        "optin": optin,
+        "event": "petitionporcinet",
+        "signin_date": today.toString()
+      }
+    }
+    makeCorsRequest(data);
   }
-  makeCorsRequest(data);
-}
 
-function extractUrlParams(){
-  var t = document.location.search.substring(1).split('&'); var f = [];
-  for (var i=0; i<t.length; i++){
-    var x = t[ i ].split('=');
-    f[x[0]]=decodeURIComponent(x[1]);
+  function extractUrlParams(){
+    var t = document.location.search.substring(1).split('&'); var f = [];
+    for (var i=0; i<t.length; i++){
+      var x = t[ i ].split('=');
+      f[x[0]]=decodeURIComponent(x[1]);
+    }
+    return f;
+  };
+
+  function isValidEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
   }
-  return f;
-};
 
-function isValidEmail(email) {
-  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(email);
-}
-
-function removeClass()
-{
-  if ($(this).attr("type") == "radio") {
-    $("input[name=" + $(this).attr("name") + "]").parent().removeClass("error");
-  } else {
-    $(this).parent().removeClass("error");
+  function removeClass()
+  {
+    if ($(this).attr("type") == "radio") {
+      $("input[name=" + $(this).attr("name") + "]").parent().removeClass("error");
+    } else {
+      $(this).parent().removeClass("error");
+    }
+    $(this).off("change");
   }
-  $(this).off("change");
-}
 
-function showError(elem) {
-  if (elem.attr("type") == "radio" || elem.attr("type") == "checkbox") {
-    $("input[name=" + elem.attr("name") + "]").parent().addClass("error");
-    $("input[name=" + elem.attr("name") + "]").on("change", removeClass);
-  } else if (elem.prop("tagName") == "SELECT") {
-    elem.parent().parent().addClass("error");
-    elem.on("change", removeClass);
+  function showError(elem) {
+    if (elem.attr("type") == "radio" || elem.attr("type") == "checkbox") {
+      $("input[name=" + elem.attr("name") + "]").parent().addClass("error");
+      $("input[name=" + elem.attr("name") + "]").on("change", removeClass);
+    } else if (elem.prop("tagName") == "SELECT") {
+      elem.parent().parent().addClass("error");
+      elem.on("change", removeClass);
   } else if (elem.attr("name") == "phone") { // For intlTelInput only
     elem.parent().parent().addClass("error");
     elem.on("change", removeClass);
@@ -220,16 +220,27 @@ $(window).load(function() {
   });
 });
 
+function  show_submit_message()
+{
+  var     timer = 3000;
+
+  $("#submit_message").slideDown(500, function()
+  {
+    window.setTimeout(function(){
+      $("#submit_message").slideUp(500);
+    }, timer);
+  });
+}
 
 $(document).ready(function()
 {
  fillFieldsFromUrl();
-  $(".petitionForm").on("submit", function(e) {
-    e.preventDefault();
-    if (isValid() == true) {
-      submitForm();
-    }
-  });
+ $(".petitionForm").on("submit", function(e) {
+  e.preventDefault();
+  if (isValid() == true) {
+    submitForm();
+  }
+});
  height_adjust();
  $("#id_phone").intlTelInput({
   utilsScript: "/js/tel-input/lib/libphonenumber/build/utils.js",
@@ -240,7 +251,7 @@ $(document).ready(function()
  {
   e.preventDefault();
   if (isValid() == true) {
-    console.log("form submitted");
+    show_submit_message();
   }
 });
  $(".social-network").on("click", function(e) { e.preventDefault(); window.open($(this).attr('href'),'Je partage', 'height=500,width=500'); });

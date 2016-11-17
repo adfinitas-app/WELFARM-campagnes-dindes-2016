@@ -39,7 +39,27 @@
   margin: 0 0 1rem 0; }
 
 body {
-  font-family: "nimbus-sans", sans-serif; }
+  font-family: "nimbus-sans", sans-serif;
+  position: relative;
+}
+
+#submit_message
+{
+  position: fixed;
+  top:0;
+  width: 100%;
+  background:#97bf0d;
+  color: white;
+  text-align: center;
+  z-index: 99;
+}
+
+#submit_message > p{
+  display: inline-block;
+  margin: 10px;
+  font-size: 20px;
+  font-family: "Fjalla One", sans-serif;
+}
 
 input[type="text"], input[type="email"] {
   height: 50px;
@@ -56,6 +76,8 @@ input[type="text"], input[type="email"] {
 
 .intl-tel-input {
   width: 100%; }
+
+
 
 label {
   color: #ffffff;
