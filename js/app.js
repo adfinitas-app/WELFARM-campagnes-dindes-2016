@@ -1,5 +1,5 @@
 /* Smooth scroll */
-var fbGlobal = new Firebase("https://welfarmpetitioncount.firebaseio.com");
+var fbGlobal = new Firebase("https://viededinde-6f5e0.firebaseio.com/");
 var merciPath = "/lp-2/index.html"
 
 // Make sure firebase API is loaded
@@ -266,10 +266,12 @@ $(document).ready(function()
   utilsScript: "/js/tel-input/lib/libphonenumber/build/utils.js",
   initialCountry: "fr"
 });
-fbGlobal.child("counter").once("value", function(snapshot) {
+
+  fbGlobal.child("counter").once("value", function(snapshot) {
     $("#nb-signatures").html(snapshot.val());
     Firebase.goOffline();
   });
+  
  $(".petitionForm").on("submit", function(e)
  {
   e.preventDefault();
