@@ -1,6 +1,24 @@
 /* Smooth scroll */
 var merciPath = "/lp-2/index.html"
 
+// Make sure firebase API is loaded
+function counter(callbackFunction) {
+  Firebase.goOnline();
+  fbGlobal.child('counter').transaction(function(currentValue) {
+    return (currentValue||0) + 1;
+  }, function(err, committed, snapshot){
+    if (committed){
+      $("#nb-signatures").html(snapshot.val());
+      //alert('ok :)');
+      Firebase.goOffline();
+      callbackFunction();
+    }
+    else {
+      //alert('Error in counter ! Maybe you are hacking me ?');
+    }
+  });
+}
+
 $(function() {
   $('a[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -15,6 +33,7 @@ $(function() {
     }
   });
 });
+
 function getCookie(cname) {
   var name = cname + "=";
   var ca = document.cookie.split(';');
