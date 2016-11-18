@@ -270,7 +270,8 @@ $(document).ready(function()
  {
   e.preventDefault();
   if (isValid() == true) {
-    show_submit_message();
+     counter(submitForm);
+     show_submit_message();
   }
 });
  $(".social-network").on("click", function(e) { e.preventDefault(); window.open($(this).attr('href'),'Je partage', 'height=500,width=500'); });
